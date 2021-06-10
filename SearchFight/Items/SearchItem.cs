@@ -38,5 +38,24 @@ namespace SearchFight.Items
         {
             return items.Select(item => new SearchItem(item)).ToList();
         }
+
+        protected bool Equals(SearchItem other)
+        {
+            return LanguageName == other.LanguageName;
+        }
+        
+        public override bool Equals(object? obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            
+            return Equals((SearchItem) obj);
+        }
+        
+        public override int GetHashCode()
+        {
+            return (LanguageName != null ? LanguageName.GetHashCode() : 0);
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace SearchFight.Items
         /// <summary>
         /// Number of items found.
         /// </summary>
-        public int NumberResultsFound { get; }
+        public long NumberResultsFound { get; }
 
         /// <summary>
         /// Initialize an object SearchResult for search item and search engine.
@@ -30,7 +30,7 @@ namespace SearchFight.Items
         /// problems in the search.</param>
         /// <exception cref="ArgumentNullException">Exception throw by arguments searchItem and searchEngineç
         /// nulls.</exception>
-        public SearchResult(SearchItem searchItem, ISearchEngine searchEngine, int numberItemsFound)
+        public SearchResult(SearchItem searchItem, ISearchEngine searchEngine, long numberItemsFound)
         {
             SearchItem = searchItem ?? throw new ArgumentNullException(nameof(searchItem));
             SearchEngine = searchEngine ?? throw new ArgumentNullException(nameof(searchEngine));
