@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 using SearchFight.Items;
 using SearchFight.SearchEngines;
@@ -16,8 +15,8 @@ namespace SearchFight
 
             var searchEngines = new List<ISearchEngine>
             {
-                new SearchEngineBing(new HttpClient()), 
-                new SearchEngineYahooSearch(new HttpClient())
+                new SearchEngineBing(), 
+                new SearchEngineYahooSearch()
             };
 
             var searchExecutor = new SearchExecutor(searchEngines.ToArray());
